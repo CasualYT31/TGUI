@@ -851,7 +851,14 @@ namespace tgui
         }
         else
         {
-            const auto dotPos = expression.find('.');
+            // CASUALYT31 CHANGE
+            // Because of the way I've been naming my widgets (including dots in their names),
+            // referring to them in expessions has been impossible, primarily because TGUI
+            // does not expect it. However, changing the find method here to start from the
+            // end of the expression has solved the issue that I was running into. I do not
+            // know if this has fully solved the problem, however.
+            const auto dotPos = expression.rfind('.');
+            // END CHANGE
             if (dotPos != String::npos)
             {
                 const String widgetName = expression.substr(0, dotPos);
