@@ -200,6 +200,18 @@ namespace tgui
         return m_relativeGlyphHeight;
     }
 
+    // CASUALYT31 CHANGE
+
+    Vector2f BitmapButton::getAbsolutePositionOfImage() const {
+        return getAbsolutePosition() + m_imageComponent->getPosition();
+    }
+
+    Vector2f BitmapButton::getSizeOfImage() const {
+        return m_imageComponent->getSize();
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void BitmapButton::rendererChanged(const String& property)
