@@ -420,6 +420,14 @@ namespace tgui
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // CASUALYT31 CHANGE
+
+    sf::View GuiSFML::calculateGUIView() const {
+        return m_renderTarget->calculateView();
+    }
+
+    // END CHANGE
+
     void GuiSFML::init()
     {
         if (!isBackendSet())
