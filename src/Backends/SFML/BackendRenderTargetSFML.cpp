@@ -260,6 +260,29 @@ namespace tgui
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // CASUALYT31 CHANGE
+
+    sf::View BackendRenderTargetSFML::calculateView() const {
+        FloatRect clipRect = m_viewRect;
+        FloatRect clipViewport = m_viewport;
+
+        if ((clipViewport.width > 0) && (clipViewport.height > 0))
+        {
+            sf::View newView{ {std::round(clipRect.left), std::round(clipRect.top),
+                              std::round(clipRect.width), std::round(clipRect.height)} };
+            newView.setViewport({ clipViewport.left / m_targetSize.x, clipViewport.top / m_targetSize.y,
+                                 clipViewport.width / m_targetSize.x, clipViewport.height / m_targetSize.y });
+            return newView;
+        } else // Clip the entire window
+        {
+            sf::View clippingView{ {0, 0, 0, 0} };
+            clippingView.setViewport({ 0, 0, 0, 0 });
+            return clippingView;
+        }
+    }
+
+    // END CHANGE
+
     void BackendRenderTargetSFML::updateClipping(FloatRect clipRect, FloatRect clipViewport)
     {
         if ((clipViewport.width > 0) && (clipViewport.height > 0))
