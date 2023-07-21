@@ -305,6 +305,10 @@ TGUI_MODULE_EXPORT namespace tgui
         bool isVerticalScrollbarShown() const;
 
         bool isHorizontalScrollbarShown() const;
+
+        unsigned int getVerticalScrollbarMaximum() const;
+
+        unsigned int getHorizontalScrollbarMaximum() const;
         // END CHANGE
 
 
