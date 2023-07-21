@@ -474,6 +474,14 @@ namespace tgui
         return m_horizontalScrollbar->isShown();
     }
 
+    unsigned int ScrollablePanel::getVerticalScrollbarMaximum() const {
+        return m_verticalScrollbar->getMaximum();
+    }
+
+    unsigned int ScrollablePanel::getHorizontalScrollbarMaximum() const {
+        return m_horizontalScrollbar->getMaximum();
+    }
+
     // END CHANGE
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
