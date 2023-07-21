@@ -301,6 +301,13 @@ TGUI_MODULE_EXPORT namespace tgui
         TGUI_NODISCARD unsigned int getHorizontalScrollbarValue() const;
 
 
+        // CASUALYT31 CHANGE
+        bool isVerticalScrollbarShown() const;
+
+        bool isHorizontalScrollbarShown() const;
+        // END CHANGE
+
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Returns the leaf child widget that is located at the given position
         ///
