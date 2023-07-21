@@ -464,6 +464,18 @@ namespace tgui
         return m_horizontalScrollbar->getValue();
     }
 
+    // CASUALYT31 CHANGE
+
+    bool ScrollablePanel::isVerticalScrollbarShown() const {
+        return m_verticalScrollbar->isShown();
+    }
+
+    bool ScrollablePanel::isHorizontalScrollbarShown() const {
+        return m_horizontalScrollbar->isShown();
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     Widget::Ptr ScrollablePanel::getWidgetAtPosition(Vector2f pos) const
