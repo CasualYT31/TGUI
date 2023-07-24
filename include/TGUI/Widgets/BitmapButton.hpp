@@ -134,9 +134,9 @@ TGUI_MODULE_EXPORT namespace tgui
         TGUI_NODISCARD float getImageScaling() const;
 
         // CASUALYT31 CHANGE
-        Vector2f getAbsolutePositionOfImage() const;
+        TGUI_NODISCARD Vector2f getAbsolutePositionOfImage() const;
 
-        Vector2f getSizeOfImage() const;
+        TGUI_NODISCARD Vector2f getSizeOfImage() const;
         // END CHANGE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
