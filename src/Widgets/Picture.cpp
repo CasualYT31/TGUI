@@ -139,6 +139,14 @@ namespace tgui
         return false;
     }
 
+    // CASUALYT31 CHANGE
+
+    void Picture::setDrawCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func) {
+        m_drawCallback = func;
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void Picture::leftMouseReleased(Vector2f pos)
@@ -237,6 +245,9 @@ namespace tgui
     void Picture::draw(BackendRenderTarget& target, RenderStates states) const
     {
         target.drawSprite(states, m_sprite);
+        // CASUALYT31 CHANGE
+        if (m_drawCallback) m_drawCallback(target, shared_from_this());
+        // END CHANGE
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

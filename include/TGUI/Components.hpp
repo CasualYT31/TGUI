@@ -622,12 +622,27 @@ namespace dev
 
         TGUI_NODISCARD std::shared_ptr<Component> clone() const override;
 
+        // CASUALYT31 CHANGE
+
+        void setWidget(const tgui::Widget::ConstPtr& widget);
+
+        void setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func);
+
+        // END CHANGE
+
     private:
 
         StyleProperty<Texture>* m_textureStyle;
         Sprite m_sprite;
 
         std::uint64_t m_textureCallbackId = 0;
+
+        // CASUALYT31 CHANGE
+
+        tgui::Widget::ConstPtr m_widget;
+        std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)> m_drawCallback;
+        
+        // END CHANGE
     };
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
