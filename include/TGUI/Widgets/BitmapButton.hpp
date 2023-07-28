@@ -134,9 +134,13 @@ TGUI_MODULE_EXPORT namespace tgui
         TGUI_NODISCARD float getImageScaling() const;
 
         // CASUALYT31 CHANGE
+
         TGUI_NODISCARD Vector2f getAbsolutePositionOfImage() const;
 
         TGUI_NODISCARD Vector2f getSizeOfImage() const;
+
+        void setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func);
+
         // END CHANGE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
