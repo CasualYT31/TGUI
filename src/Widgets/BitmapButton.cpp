@@ -174,6 +174,15 @@ namespace tgui
         return m_relativeGlyphHeight;
     }
 
+    // CASUALYT31 CHANGE
+
+    void BitmapButton::setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func) {
+        m_imageComponent->setWidget(shared_from_this());
+        m_imageComponent->setCallback(func);
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void BitmapButton::rendererChanged(const String& property)

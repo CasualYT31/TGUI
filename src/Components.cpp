@@ -860,6 +860,9 @@ namespace dev
     {
         states.transform.translate(m_position);
         target.drawSprite(states, m_sprite);
+        // CASUALYT31 CHANGE
+        if (m_widget && m_drawCallback) m_drawCallback(target, m_widget);
+        // END CHANGE
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -868,6 +871,18 @@ namespace dev
     {
         return std::make_shared<ImageComponent>(*this);
     }
+
+    // CASUALYT31 CHANGE
+
+    void ImageComponent::setWidget(const tgui::Widget::ConstPtr& widget) {
+        m_widget = widget;
+    }
+
+    void ImageComponent::setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func) {
+        m_drawCallback = func;
+    }
+
+    // END CHANGE
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

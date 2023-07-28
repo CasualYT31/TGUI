@@ -160,6 +160,11 @@ TGUI_MODULE_EXPORT namespace tgui
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         TGUI_NODISCARD bool isMouseOnWidget(Vector2f pos) const override;
 
+        // CASUALYT31 CHANGE
+
+        void setDrawCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func);
+
+        // END CHANGE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// @internal
@@ -243,6 +248,12 @@ TGUI_MODULE_EXPORT namespace tgui
 
         // Will be set to true after the first click, but gets reset to false when the second click does not occur soon after
         bool m_possibleDoubleClick = false;
+
+        // CASUALYT31 CHANGE
+
+        std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)> m_drawCallback;
+
+        // END CHANGE
     };
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
