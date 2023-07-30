@@ -296,6 +296,22 @@ namespace tgui
         return m_buttonAlignment;
     }
 
+    // CASUALYT31 CHANGE
+
+    void MessageBox::renameButtons(const std::vector<tgui::String>& newCaptions) {
+        std::size_t counter = 0;
+        for (const auto& caption : newCaptions) {
+            if (counter >= m_buttons.size())
+                addButton(caption);
+            else
+                m_buttons[counter]->setText(caption);
+            ++counter;
+        }
+        rearrange();
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void MessageBox::rearrange()

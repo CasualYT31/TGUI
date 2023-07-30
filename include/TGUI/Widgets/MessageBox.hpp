@@ -243,6 +243,15 @@ TGUI_MODULE_EXPORT namespace tgui
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         TGUI_NODISCARD Alignment getButtonAlignment() const;
 
+        // CASUALYT31 CHANGE
+
+        /**
+         * @brief Will rename each button in the MessageBox.
+         * If there are more @c newCaptions than buttons, new buttons will be added.
+         */
+        void renameButtons(const std::vector<tgui::String>& newCaptions);
+
+        // END CHANGE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     protected:
