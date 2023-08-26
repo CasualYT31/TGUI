@@ -129,6 +129,17 @@ namespace tgui
             return nullptr;
     }
 
+    // CASUALYT31 CHANGE
+
+    bool BoxLayout::setWidgetIndex(const Widget::Ptr& widget, std::size_t index) {
+        if (Container::setWidgetIndex(widget, index)) {
+            updateWidgets();
+            return true;
+        } else return false;
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void BoxLayout::rendererChanged(const String& property)

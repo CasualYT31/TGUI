@@ -136,6 +136,11 @@ TGUI_MODULE_EXPORT namespace tgui
         TGUI_NODISCARD Widget::Ptr get(std::size_t index) const;
         using Container::get;
 
+        // CASUALYT31 CHANGE
+
+        virtual bool setWidgetIndex(const Widget::Ptr& widget, std::size_t index) override;
+
+        // END CHANGE
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     protected:
