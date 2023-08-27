@@ -141,7 +141,7 @@ namespace tgui
 
     // CASUALYT31 CHANGE
 
-    void Picture::setDrawCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func) {
+    void Picture::setDrawCallback(const std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)>& func) {
         m_drawCallback = func;
     }
 
@@ -246,7 +246,7 @@ namespace tgui
     {
         target.drawSprite(states, m_sprite);
         // CASUALYT31 CHANGE
-        if (m_drawCallback) m_drawCallback(target, shared_from_this());
+        if (m_drawCallback) m_drawCallback(target, states, shared_from_this());
         // END CHANGE
     }
 
