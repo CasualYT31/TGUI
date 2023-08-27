@@ -184,7 +184,7 @@ namespace tgui
         return m_imageComponent->getSize();
     }
 
-    void BitmapButton::setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func) {
+    void BitmapButton::setCallback(const std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)>& func) {
         m_imageComponent->setWidget(shared_from_this());
         m_imageComponent->setCallback(func);
     }

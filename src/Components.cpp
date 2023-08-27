@@ -861,7 +861,7 @@ namespace dev
         states.transform.translate(m_position);
         target.drawSprite(states, m_sprite);
         // CASUALYT31 CHANGE
-        if (m_widget && m_drawCallback) m_drawCallback(target, m_widget);
+        if (m_widget && m_drawCallback) m_drawCallback(target, states, m_widget);
         // END CHANGE
     }
 
@@ -878,7 +878,7 @@ namespace dev
         m_widget = widget;
     }
 
-    void ImageComponent::setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func) {
+    void ImageComponent::setCallback(const std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)>& func) {
         m_drawCallback = func;
     }
 
