@@ -626,7 +626,7 @@ namespace dev
 
         void setWidget(const tgui::Widget::ConstPtr& widget);
 
-        void setCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func);
+        void setCallback(const std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)>& func);
 
         // END CHANGE
 
@@ -640,7 +640,7 @@ namespace dev
         // CASUALYT31 CHANGE
 
         tgui::Widget::ConstPtr m_widget;
-        std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)> m_drawCallback;
+        std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)> m_drawCallback;
         
         // END CHANGE
     };

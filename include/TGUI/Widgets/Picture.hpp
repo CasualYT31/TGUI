@@ -162,7 +162,7 @@ TGUI_MODULE_EXPORT namespace tgui
 
         // CASUALYT31 CHANGE
 
-        void setDrawCallback(const std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)>& func);
+        void setDrawCallback(const std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)>& func);
 
         // END CHANGE
 
@@ -251,7 +251,7 @@ TGUI_MODULE_EXPORT namespace tgui
 
         // CASUALYT31 CHANGE
 
-        std::function<void(BackendRenderTarget&, tgui::Widget::ConstPtr)> m_drawCallback;
+        std::function<void(BackendRenderTarget&, const RenderStates&, tgui::Widget::ConstPtr)> m_drawCallback;
 
         // END CHANGE
     };
