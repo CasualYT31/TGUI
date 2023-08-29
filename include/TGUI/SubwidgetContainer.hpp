@@ -99,6 +99,14 @@ TGUI_MODULE_EXPORT namespace tgui
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         TGUI_NODISCARD const Container* getContainer() const;
 
+        // CASUALYT31 CHANGE
+
+        TGUI_NODISCARD tgui::Container::Ptr getContainerSharedPtr();
+
+        TGUI_NODISCARD tgui::Container::ConstPtr getContainerSharedPtr() const;
+
+        // END CHANGE
+
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// @internal
