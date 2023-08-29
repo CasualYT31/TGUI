@@ -84,6 +84,18 @@ namespace tgui
         return m_container.get();
     }
 
+    // CASUALYT31 CHANGE
+
+    TGUI_NODISCARD tgui::Container::Ptr SubwidgetContainer::getContainerSharedPtr() {
+        return m_container.getSharedPtr();
+    }
+
+    TGUI_NODISCARD tgui::Container::ConstPtr SubwidgetContainer::getContainerSharedPtr() const {
+        return m_container.getSharedPtr();
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     bool SubwidgetContainer::leftMousePressed(Vector2f pos)

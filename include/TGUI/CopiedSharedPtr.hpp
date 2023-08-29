@@ -97,6 +97,15 @@ TGUI_MODULE_EXPORT namespace tgui
             return m_WidgetPtr.get();
         }
 
+        // CASUALYT31 CHANGE
+
+        TGUI_NODISCARD std::shared_ptr<WidgetType> getSharedPtr() const noexcept
+        {
+            return m_WidgetPtr;
+        }
+
+        // END CHANGE
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private:
 
