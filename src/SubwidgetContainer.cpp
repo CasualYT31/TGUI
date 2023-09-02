@@ -34,12 +34,6 @@ namespace tgui
     SubwidgetContainer::SubwidgetContainer(const char* typeName, bool initRenderer) :
         Widget{typeName, initRenderer}
     {
-        // CASUALYT31 CHANGE
-
-        m_container->onFocus.connect([](SubwidgetContainer* const w) { w->setFocused(true); }, this);
-        m_container->onUnfocus.connect([](SubwidgetContainer* const w) { w->setFocused(false); }, this);
-
-        // END CHANGE
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
