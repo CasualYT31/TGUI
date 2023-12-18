@@ -299,6 +299,20 @@ namespace tgui
         onSelectionChange.emit(this, static_cast<int>(index));
     }
 
+    // CASUALYT31 CHANGE
+
+    void TabContainer::deselect()
+    {
+        if (m_selectedPanel)
+            m_selectedPanel->setVisible(false);
+
+        m_selectedPanel = nullptr;
+
+        m_tabs->deselect();
+    }
+
+    // END CHANGE
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     std::size_t TabContainer::getPanelCount() const
